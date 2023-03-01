@@ -1,0 +1,22 @@
+$primary-hues: (
+  primary-light: yellow,
+  primary-medium: red,
+  primary-dark: brown,
+  contrast: ()
+);
+
+$accent-hues: (
+  accent-light: aqua,
+  accent-medium: teal,
+  accent-dark: blue,
+  contrast: ()
+);
+
+$warn-hues: (
+  warn-light: pink,
+  warn-medium: purple,
+  warn-dark: darkgray,
+  contrast: (
+    500: green
+  )
+);
