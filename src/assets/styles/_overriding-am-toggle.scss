@@ -1,0 +1,30 @@
+@use "src/assets/styles/charte-constants.scss" as constants;
+@use "sass:map"; // Accès à la fonction "map-get()"
+
+@mixin toggle-colors() {
+  .mat-mdc-slide-toggle {
+    // Track
+    --mdc-switch-selected-track-color: green; // ON/NoState
+    --mdc-switch-selected-hover-track-color: teal; // ON/Hover
+    --mdc-switch-selected-focus-track-color: aqua; // ON/Focus
+    --mdc-switch-unselected-track-color: green; // OFF/NoState
+    --mdc-switch-unselected-hover-track-color: teal; // OFF/Hover
+    --mdc-switch-unselected-focus-track-color: aqua; // OFF/Focus
+    --mdc-switch-selected-pressed-track-color: yellow; // Au click (selected --> unselected)
+    --mdc-switch-unselected-pressed-track-color: purple; // Au click (unselected --> selected)
+
+    // Button
+    --mdc-switch-selected-handle-color: green; // ON/NoState
+    --mdc-switch-selected-hover-handle-color: teal; // ON/Hover
+    --mdc-switch-selected-focus-handle-color: aqua; // ON/Focus
+    --mdc-switch-unselected-handle-color: green; // OFF/NoState
+    --mdc-switch-unselected-hover-handle-color: teal; // OFF/Hover
+    --mdc-switch-unselected-focus-handle-color: aqua; // OFF/Focus
+    --mdc-switch-selected-pressed-handle-color: yellow; // Au click (selected --> unselected)
+    --mdc-switch-unselected-pressed-handle-color: purple; // Au click (unselected --> selected)
+
+    // Icons
+    --mdc-switch-selected-icon-color: #{map-get(constants.$primary-hues, primary-light)}; // Icon "ON"
+    --mdc-switch-unselected-icon-color: #{map-get(constants.$primary-hues, primary-medium)}; // Icon "OFF"
+  }
+}

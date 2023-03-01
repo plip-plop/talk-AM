@@ -1,0 +1,49 @@
+// Custom Theming for Angular Material: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+@use "assets/styles/charte-constants.scss" as constants; // Constantes (charte)
+@use "assets/styles/_overriding-am-button.scss" as override-button; // Mixins
+@use "assets/styles/_overriding-am-toggle.scss" as override-toggle;
+@use "sass:map"; // Accès à la fonction "map-get()"
+
+@include mat.core(); // Common styles for AM: Be sure that you only ever include this mixin once!
+
+// 1) Définition des palettes (paramètres facultatifs: default/lighter/darker/text)
+// $am-palette: mat.define-palette(mat.$pink-palette); // Palette prédéfinie
+$primary-palette: mat.define-palette(constants.$primary-hues, primary-medium, primary-light, primary-dark); // Palette personnalisée
+$accent-palette: mat.define-palette(constants.$accent-hues, accent-medium, accent-light, accent-dark);
+$warn-palette: mat.define-palette(constants.$warn-hues, warn-medium, warn-light, warn-dark); // La palette "warn" est facultative
+
+// 2) Définition du thème
+$my-light-theme: mat.define-light-theme((color: (primary: $primary-palette,
+        accent: $accent-palette,
+        warn: $warn-palette,
+      )));
+
+// 3) Injection du thème dans...
+@include mat.all-component-themes($my-light-theme); // ... Tous les components d'AM...
+@include mat.datepicker-color($my-light-theme); // ... Ou certains composants (cf "inspecteur")
+@include override-toggle.toggle-colors(); // Appel aux mixins
+@include override-button.button-colors();
+
+
+// *) Style global
+html,
+body {
+  height: 100%;
+  padding: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+
+  button {
+    font-weight: bold;
+    margin: 0.25rem;
+  }
+
+  h1 {
+    font-size: 20px;
+    text-decoration: underline;
+  }
+}

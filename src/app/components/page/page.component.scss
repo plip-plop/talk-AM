@@ -1,0 +1,6 @@
+@use "src/assets/styles/charte-constants.scss" as constants; // Constantes (charte)
+@use "sass:map"; // Accès à la fonction "map-get()"
+
+.class-component {
+  background-color: map-get(constants.$warn-hues, contrast, 500);
+}
