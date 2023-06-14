@@ -2,19 +2,7 @@
 @use "sass:map"; // Accès à la fonction "map-get()"
 
 @mixin button-colors() {
-  .mat-mdc-raised-button {
-    &.mat-primary {
-      &:hover {
-        background: purple;
-      }
-    }
-  }
+  .mat-mdc-raised-button {}
 
-  .mat-mdc-outlined-button {
-    &.mat-primary {
-      &:hover {
-        background: purple;
-      }
-    }
-  }
+  .mat-mdc-outlined-button {}
 }

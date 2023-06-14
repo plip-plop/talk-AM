@@ -2,5 +2,5 @@
 @use "sass:map"; // Accès à la fonction "map-get()"
 
 .class-component {
-  background-color: map-get(constants.$warn-hues, contrast, 500);
+
 }
